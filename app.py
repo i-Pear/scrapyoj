@@ -1,5 +1,6 @@
 from flask import *
 from myspider.main import *
+from myspider.myspider.Global import *
 
 app = Flask(__name__)
 
@@ -14,6 +15,7 @@ def get():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        Glovar.stuid = username
         # Here makes file to download
         # runScrapy(username, password)
         dictionary = os.getcwd() + '\download'
